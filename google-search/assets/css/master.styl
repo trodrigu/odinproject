@@ -1,0 +1,155 @@
+@import '_settings'
+@import 'jeet'
+
+// edit()
+normalize-css()
+base()
+
+body
+  header
+    background-color #F1F1F1 
+    height 65px 
+    width 100%
+    ul
+      vertically-align()
+      inline-list()
+      li
+        .goog
+          padding 8px
+          bold()
+          width 58px
+        .search
+          width 600px
+          background-color #FFF
+          height 35px
+          border solid 1px #d6d6d6
+          border-right none
+          .searchb
+            float right
+            position relative
+            left 3px
+            button()
+            border-bottom-left-radius 0
+            border-top-left-radius 0
+            img
+              margin 0
+              padding 0
+              width 14px
+              height 14px
+        .apps
+          float right
+          img
+            width 24px
+            position relative
+            top 4px
+            // border-radius 5px
+        .signin
+          button()
+      .one
+        col(1/8)
+      .two
+        col(5/8)
+      .three
+        col(1/8)
+      .four
+        col(1/8)
+.subhead
+  height 54px 
+  width 100%
+  border-bottom 1px solid #d6d6d6
+  ul
+    inline-list()
+    col(1/2)
+    margin-left 12.5%
+    height 100%
+    li
+      vertically-align()
+      a
+        .tri
+          triangle('down', 5px)
+          position relative
+          float right
+          bottom 28px
+    li:first-child
+      color red
+      border-bottom solid 4px red
+    .onesub
+      col(1/8)
+      text-align center
+    li:last-child
+      col(1/4)
+      text-align center 
+  a
+    reset-link()
+.results
+  center(1080px)
+  .tri
+    triangle('down', 5px)
+    // top 10px
+    // float left
+  .tri1
+    triangle('down', 5px)
+    position relative
+    top 10px
+    float right
+    right 30px
+  .content
+    col(1/2)
+    margin-left 2%
+    ul
+      reset-list()
+      li
+        .green
+          color olive
+          col(3/4)
+          inline-list()
+          fs(12px)
+        .tri 
+          margin-top 10px
+          margin-left -10px
+        .grey
+          color grey
+          inline-list()
+          fs(12px)
+        .tri1
+          margin-left 15px
+        p
+          margin-top 0px
+        .small
+          fs(12px)
+        .post
+          margin-top 25px
+.related
+  center(1080px)
+  border-top solid 1px #d6d6d6
+  border-bottom solid 1px #d6d6d6
+  group()
+  .linkrelated
+    margin-left 2%
+    ul
+      col(1/2)
+      reset-list()
+      padding-bottom 15px
+      a
+        li
+          col(1/2)
+          fs(12px)
+.pagination
+  center(1080px)
+  ul
+    inline-list()
+    margin-top 25px
+    margin-bottom 25px
+    
+.footer
+  background-color #F2F2F2
+  .footercontent
+    center(1080px)
+    p
+      color grey
+      fs(14px)
+    ul
+      inline-list()
+      padding 10px
+      li
+        fs(12px)

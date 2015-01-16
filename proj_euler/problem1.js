@@ -14,7 +14,6 @@ function foo()
     }
   }
   return n;
-  // alert(n);
 }
 debug(foo());
 

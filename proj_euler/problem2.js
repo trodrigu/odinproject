@@ -17,7 +17,6 @@ fib = [0,1];
 for (var i = 0; i < 15; i++) {
 	z = x + y;
 	fib.push(z);
-	// debug(z)
 	x = y;
 	y = z;
 }

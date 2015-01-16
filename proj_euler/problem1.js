@@ -13,8 +13,9 @@ function foo()
       n += foo[i]
     }
   }
-  alert(n)
+  return n;
+  // alert(n);
 }
-  
+debug(foo());
 
 

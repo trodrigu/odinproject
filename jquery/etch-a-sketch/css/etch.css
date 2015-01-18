@@ -1,0 +1,13 @@
+.grid {
+	width: 10px;
+	height: 10px;
+	background-color: #fff;
+	border: 1px solid #333;
+}
+
+.wrapper:first-child {
+	margin-right: -4px;
+}
+.wrapper {
+	display: inline-block;
+}

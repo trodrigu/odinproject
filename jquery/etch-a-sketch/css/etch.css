@@ -1,13 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+.motherwrapper {
+  margin: 10px auto;
+  text-align: center;
+  width: 100%
+}
+
 .grid {
 	width: 10px;
 	height: 10px;
-	background-color: #fff;
-	border: 1px solid #333;
+	/*background-color: #fff;*/
+	border: 0.5px solid #D6D6D6;
 }
-
-.wrapper:first-child {
+/*.wrapper:first-child {
 	margin-right: -4px;
 }
-.wrapper {
+*/.wrapper {
+  margin: 0 auto;
 	display: inline-block;
+}
+
+.select {
+	background-color: #333;
+}
+
+/* Button styling */
+.btn {
+	padding: 10px 15px;
+	font-size: 15px
+	font-weight: 400;
+	line-height: 1.4;
+	border: none;
+	border-radius: 4px;
+  font-family: Lato
+  -webkit-transition:border .25s linear,color .25s linear,background-color .25s linear;
+  transition:border .25s linear,color .25s linear,background-color .25s linear;
+  -webkit-font-smoothing:subpixel-antialiased
+  vertical-align: middle;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+
+}
+.btn:hover, .btn:focus {
+  color: #FFF;
+  outline: 0;
+}
+.btn:active, .btn:active {
+  outline: 0;
+  box-shadow: none;
+}
+.btn-block {
+  white-space: normal;
+  width: 25%;
+  display: block;
+}
+.btn-lg {
+	padding: 10px 19px;
+	font-size: 17px;
+	line-height:  1.471;
+	border-radius: 6px;
+}
+.btn-danger{
+	color: #FFF;
+	background-color: #E74C3C;
+}
+.btn-danger:hover {
+	color: #FFF;
+	background color: #EC7063;
+	border-color: #EC7063;
+}
+.btn-danger:active{
+	background: #C44133;
+  border-color:#C44133;
 }

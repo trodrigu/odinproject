@@ -9,8 +9,8 @@
 }
 
 .grid {
-	width: 10px;
-	height: 10px;
+	width: 40px;
+	height: 40px;
 	/*background-color: #fff;*/
 	border: 0.5px solid #D6D6D6;
 }
@@ -56,7 +56,7 @@
 }
 .btn-block {
   white-space: normal;
-  width: 25%;
+  width: 8%;
   display: block;
 }
 .btn-lg {

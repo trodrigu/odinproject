@@ -48,9 +48,9 @@ function hoverblack() {
   $(document).ready(function() {
     $( ".grid" ).hover(
       function() {
-        $( this ).addClass( "select" );
-      });
-  })
+        $( this ).css( "background-color", random_color(9));
+      })
+  });
 }
 
 function grid_measure() {
@@ -66,4 +66,30 @@ function main() {
   hoverblack();
 }
 
+/* Darken color */
+function darken_color(col, amt) {
+  col = parseInt(col, 16);
+  return (((col & 0x0000FF) + amt) | ((((col >> 8) & 0x00FF) + amt) << 8) | (((col >> 16) + amt) << 16)).toString(16);
+}
+
+/* Random color generator */
+function random_color(n) {
+  array = [];
+  for (i = 0; i < 6; i++) {
+    randomizer = Math.random() * (n);
+    random_int = Math.floor(randomizer);
+    array.push(random_int);
+  }
+  hex_str = array.join('');
+  hex_str = "#" + hex_str;
+  // hex_code = parseInt(hex_str)
+  // console.log(hex_code);
+  console.log(hex_str);
+  return hex_str;
+}
+
+
+// random_color(9);
+// hoverblack();
+console.log(darken_color("FFFFFF", -10));
 main();

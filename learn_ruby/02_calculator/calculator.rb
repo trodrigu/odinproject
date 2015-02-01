@@ -20,3 +20,21 @@ def multiply(*args)
   product
 end
 
+def power(x, y)
+  exp = x**y
+  exp
+end
+
+def factorial(n)
+  facsum = 1
+  if n == 0
+    facsum = 1
+  end
+  while n > 1
+    facsum *= n
+    n -= 1
+  end
+  facsum
+end
+
+factorial(4)

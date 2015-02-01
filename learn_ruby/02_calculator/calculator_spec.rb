@@ -34,6 +34,7 @@
 #
 
 require "calculator"
+require_relative "../spec_helper"
 
 describe "add" do
   it "adds 0 and 0" do
@@ -77,12 +78,15 @@ end
 # once the above tests pass,
 # write tests and code for the following:
 
-describe "#multiply" do
+describe "multiply" do
 
-  it "multiplies two numbers"
+  it "multiplies two numbers" do
+    multiply(6,7).should == 42
+  end
 
-  it "multiplies several numbers"
-
+  it "multiplies several numbers" do
+    multiply(2,2,2).should == 8
+  end
 end
 
 describe "#power" do

@@ -36,5 +36,3 @@ def factorial(n)
   end
   facsum
 end
-
-factorial(4)

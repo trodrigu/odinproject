@@ -10,6 +10,17 @@ def translate(word)
     c = s[0]
     front_consonants = ""
     while c != "a" && c != "e" && c != "i" && c != "o" && c != "u"
+        if c == "q" && s[n+1] == "u"
+          s.slice!(n..n+1)
+          # s.slice!(n-1)
+          front_consonants << "qu"
+          s << front_consonants
+          front_consonants = ""
+          s = s.downcase
+          total = ""
+          total << s
+          break
+        end
       front_consonants << c
       n += 1
       c = s[n]
@@ -30,6 +41,15 @@ def translate(word)
       c = t[0]
       front_consonants = ""
       while c != "a" && c != "e" && c != "i" && c != "o" && c != "u"
+        if c == "q" && t[1] == "u"
+          t.slice!(n..n+1)
+          front_consonants << "qu"
+          t << front_consonants
+          t = t.downcase
+          total << " "
+          total << t
+        end
+
         front_consonants << c
         n += 1
         c = t[n]
@@ -45,3 +65,4 @@ def translate(word)
     end
   total
 end
+translate("square")

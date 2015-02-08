@@ -3,19 +3,20 @@ class Book
 
   def title=(str)
     separated = str.split
-    capitalized_words = separated.each { |c| c.capitalize! }
-    # capitalized_words = ""
-    # for i in 0..separated.length-1 do
-    #     capitalized_words << separated[i].capitalize
-    #     puts capitalized_words
-        # puts separated[i]
-    #   if i != "and"
-      # end
-    # end
+    capitalized_words = []
+    for i in 0..separated.length-1 do
+        if i < 1
+          capitalized_words << separated[i].capitalize
+        end
+        if i > 0
+          if separated[i] != "and" && separated[i] != "in" && separated[i] != "of" && separated[i] != "the" && separated[i] != "a" && separated[i] != "an"
+            capitalized_words << separated[i].capitalize
+          else
+            capitalized_words << separated[i]
+          end
+        end
+    end
     @title = capitalized_words.join(" ")
-    # check sort
-
-    puts @title
   end
 
 end

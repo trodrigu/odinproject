@@ -1,0 +1,17 @@
+// Find the names of all people who eat at least one pizza served by Dominos but who do not frequent Dominos.
+// Serves(Pizzeria, Pizza, Price)
+// Frequents(Name, Pizzeria)
+// Eats(Name, Pizza)
+\project_{name}(
+  \project_{pizza}(
+    \select_{Pizzeria='Dominos'}(Serves)
+    )
+  \join
+    Eats
+)
+\diff
+\project_{name}(
+ \select_{Pizzeria = 'Dominos'}(
+   Frequents
+ )
+);

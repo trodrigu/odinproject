@@ -1,0 +1,22 @@
+// Find all pizzerias that serve at least one pizza for less than $10 that both Amy and Fay eat.
+// Eats(Name, Pizza) join rename of Eats(Name1, Pizza) to yield Name, Pizza, Name1
+// Select from that with Name = Name1
+// Project Pizza
+// Join that with Serves(Pizzeria, Pizza, Price)
+\project_{pizzeria}(
+  \project_{Pizza}(
+    \select_{Name1='Amy' and Name2='Fay'}(
+      \rename_{Name1, Pizza}(Eats)
+      \join
+      \rename_{Name2, Pizza}(Eats)
+    )
+  )
+  \join_{Pizza=Pizza1}
+  \project_{Pizzeria, Pizza1}(
+    \rename_{Pizzeria, Pizza1, Price}(
+      \select_{price<10}(
+        Serves
+        )
+    )
+  )
+);

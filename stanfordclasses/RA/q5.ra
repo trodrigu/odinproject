@@ -2,15 +2,15 @@
 // Serves(Pizzeria, Pizza, Price)
 // Frequents(Name, Pizzeria)
 // Eats(Name, Pizza)
-\project_{name}(
-  \project_{pizza}(
+\project_{Name}(
+  \project_{Pizza}(
     \select_{Pizzeria='Dominos'}(Serves)
     )
   \join
     Eats
 )
 \diff
-\project_{name}(
+\project_{Name}(
  \select_{Pizzeria = 'Dominos'}(
    Frequents
  )

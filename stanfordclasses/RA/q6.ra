@@ -1,0 +1,6 @@
+// Find all pizzas that are eaten only by people younger than 24, or that cost less than $10 everywhere they're served.
+// Person(Name, Age, Gender)
+// Serves(Pizzeria, Pizza, Price)
+\select_{Age<24}(
+  Person
+);

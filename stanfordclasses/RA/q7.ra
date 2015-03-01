@@ -1,0 +1,52 @@
+// Find the age of the oldest person (or people) who eat mushroom pizza.
+// Person(Name, Age, Gender)
+// Eats(Name, Pizza)
+
+// Entire Bound of Ages
+\project_{Age}(
+  \project_{Name, Age}(
+    (\project_{Name, Age}(
+      Person
+    ))
+
+    \join
+
+    (\select_{Pizza='mushroom'}(
+      Eats
+    ))
+  )
+)
+
+\diff
+
+// Find Inner Bound of Ages
+\project_{Age}(
+  \project_{Name, Age}(
+    (\project_{Name, Age}(
+      Person
+    ))
+
+    \join
+
+    (\select_{Pizza='mushroom'}(
+      Eats
+    ))
+  )
+
+  // This join is money
+  \join_{Age < Age1}
+
+  \rename_{Name, Age1}(
+    \project_{Name, Age}(
+      (\project_{Name, Age}(
+        Person
+      ))
+
+      \join
+
+      (\select_{Pizza='mushroom'}(
+        Eats
+      ))
+      )
+  )
+);

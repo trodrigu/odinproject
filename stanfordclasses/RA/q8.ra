@@ -1,0 +1,41 @@
+// Find all pizzerias that serve only pizzas eaten by people over 30.
+// Person(Name, Age, Gender)
+// Serves(Pizzeria, Pizza, Price)
+// Eats(Name, Pizza)
+
+// All of the Pizzerias
+\project_{Pizzeria}(
+    Serves
+  )
+
+  // Calculate the Pizzerias left
+  \diff
+
+  (\project_{Pizzeria}(
+  //  Pizzeria and Pizzas that are eaten at by under 30 yr olds
+  \project_{Pizzeria, Pizza}(
+    Serves
+  )
+
+  \join
+
+  // Pizza that everybody eats
+  (\project_{Pizza}(
+    Eats
+  )
+
+  // Calculate the Pizza that People not over 30 eat
+  \diff
+
+    // Pizza that People over 30 eat
+    \project_{Pizza}(
+      \select_{Age>30}(
+        Person
+      )
+
+     \join
+
+      Eats
+    )
+  ))
+);

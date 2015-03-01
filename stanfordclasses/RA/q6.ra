@@ -1,6 +1,36 @@
 // Find all pizzas that are eaten only by people younger than 24, or that cost less than $10 everywhere they're served.
 // Person(Name, Age, Gender)
+// Eats(Name, Pizza)
 // Serves(Pizzeria, Pizza, Price)
-\select_{Age<24}(
-  Person
-);
+
+// The entire serves Pizza list
+(\project_{Pizza}(
+  Serves
+)
+\diff
+// Pizza that costs more than $10 somewhere they're served
+\project_{Pizza}(
+  \select_{Price>10}(
+    Serves
+  )
+))
+
+\union
+
+// Pizza eaten by everybody
+(\project_{Pizza}(
+  Eats
+)
+
+\diff
+
+// Pizza eaten by 24 and older
+\project_{Pizza}(
+  \project_{Name}(
+    \select_{Age>=24}(
+      Person
+    )
+  )
+  \join
+  Eats
+));

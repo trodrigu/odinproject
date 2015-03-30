@@ -1,0 +1,47 @@
+// Find all pizzerias that serve every pizza eaten by people over 30.
+
+\project_{Pizzeria}(
+  \select_{Pizza < Pizza1}(
+
+    // Done because I like Capitalizing the first letter
+    \rename_{Pizzeria, Pizza, Price}(
+      Serves
+    )
+
+    \join
+
+    // Pizza eaten by people over 30
+    \project_{Pizza}(
+
+      \select_{Age > 30}(
+        Person
+        )
+
+       \join
+
+        Eats
+    )
+
+    \join
+
+    \rename_{Pizzeria, Pizza1, Price1}(
+
+      // Pizzerias that serve pizza eaten by over 30 yr olds
+      Serves
+
+      \join
+
+      // Pizza eaten by people over 30
+      \project_{Pizza}(
+
+        \select_{Age > 30}(
+          Person
+        )
+
+        \join
+
+        Eats
+      )
+    )
+  )
+);

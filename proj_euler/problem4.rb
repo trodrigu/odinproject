@@ -92,8 +92,11 @@ class PalinNum
 
   def palindrome?( first_half_arr, reverse_half )
     if first_half_arr == reverse_half
-      puts "\nUpTownPhunck Palindrome"
+      puts "\nUpTownPhunck Palindrome Multipliers"
       @uptown = true
     end
   end
 end
+
+palindrome = PalinNum.new(3)
+palindrome.run

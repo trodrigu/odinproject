@@ -31,6 +31,10 @@ class PalinNum
       puts first_mult, second_mult
       puts $arr
     end
+    # Store $arr when palindrome
+    # Set second_mult back to 999 and continue loop
+    # Change exit to be when first_mult == 0
+
     puts "Don't believe me?"
   end
 

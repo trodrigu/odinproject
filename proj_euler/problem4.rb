@@ -10,11 +10,12 @@
 # palindrome = PalinNum.new(2)
 # palindrome.run
 
+require 'pp'
 class PalinNum
 
   attr_accessor :digits
 
-  @uptown = false
+  $master_arr = []
 
   def initialize( digits )
     @digits = digits
@@ -23,19 +24,14 @@ class PalinNum
   def run
     first_mult = pick_start
     second_mult = pick_start
-    until @uptown == true
+    until first_mult == 0
       second_mult = second_mult_decrementer( second_mult )
       first_mult = first_mult_decrementer( first_mult, second_mult )
       product = first_mult * second_mult
-      calc( product )
-      puts first_mult, second_mult
-      puts $arr
+      array_test( product )
+      
     end
-    # Store $arr when palindrome
-    # Set second_mult back to 999 and continue loop
-    # Change exit to be when first_mult == 0
-
-    puts "Don't believe me?"
+    pp $master_arr.max
   end
 
   def second_mult_decrementer( second_mult )
@@ -56,11 +52,11 @@ class PalinNum
     end
   end
 
-  def calc( product )
-    arr = convert_to_array( product.to_s )
-    puts arr
-    first_half_arr = find_first_half_array( arr )
-    second_half_arr = find_second_half_array( arr )
+  def array_test( product )
+    product = product.to_s
+    @arr = convert_to_array( product )
+    first_half_arr = find_first_half_array( @arr )
+    second_half_arr = find_second_half_array( @arr )
     reverse_half = second_half_arr.reverse
     palindrome?( first_half_arr, reverse_half )
   end
@@ -96,8 +92,9 @@ class PalinNum
 
   def palindrome?( first_half_arr, reverse_half )
     if first_half_arr == reverse_half
-      puts "\nUpTownPhunck Palindrome Multipliers"
-      @uptown = true
+      possible = @arr.join('').to_i
+      $master_arr << possible
+      second_mult = 999
     end
   end
 end

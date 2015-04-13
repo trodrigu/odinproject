@@ -11,7 +11,7 @@ z = 0
 fib = [0, 1]
 sum = 0
 sumarr = 0
-for i in 0..15
+while z < 4000000
   z = y + x
   fib << z
   x = y
